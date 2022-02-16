@@ -1,0 +1,15 @@
+<div class="container mt-3"><h1>Restaurants n' Reviews</h1>
+<ul>
+<% @restaurants.each do |restaurant| %>
+<br>
+
+<li><%= link_to restaurant.name, restaurant   %></li>
+<li>You can find it here: <%= restaurant.address %></li>
+<li>It is a <%= restaurant.category %> restaurant</li>
+</ul>
+<%= link_to "Edit", edit_restaurant_path(restaurant), class: "btn btn-warning" %>
+<%= link_to "Destroy", restaurant, method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-danger" %>
+<% end %>
+<br>
+<%= link_to 'New Restaurant', new_restaurant_path, class: "btn btn-primary mt-3" %>
+</div>
